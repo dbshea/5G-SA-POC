@@ -19,7 +19,7 @@
 
     - name: SELinux role to allow HAProxy to access ports 8080
       include_role:
-        name: linux-system-roles.selinux
+        name: rhel-system-roles.selinux
 
     - name: Starting services
       service:
