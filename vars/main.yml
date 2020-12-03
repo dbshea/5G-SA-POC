@@ -1,6 +1,6 @@
 ---
 
-srv_ip: "10.250.18.200"
+srv_ip: "10.250.18.250"
 nodes_subnet24: "10.250.18"
 baseName: "lab"
 baseDomain: "local"

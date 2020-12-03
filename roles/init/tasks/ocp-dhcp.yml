@@ -12,15 +12,6 @@
           - python3-netaddr
         state: present
 
-    - name: setup firewall
-      firewalld:
-        service: "{{ item }}"
-        permanent: yes
-        state: enabled
-        immediate: yes
-        zone: internal
-      with_items: dhcp
-
     - name: Copy over configuration
       template:
         src: dhcpd.conf.j2
