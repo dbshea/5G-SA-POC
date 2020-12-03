@@ -34,13 +34,13 @@
 - name: Setup OCP Bootstrap & Master VMs
   command: "virt-install
     --name {{ item.name }}
-    --disk size=/home/images/{{ item.name }}.qcow2,size=120
+    --disk size=120
     --ram 16384
     --cpu host
     --vcpus 4
     --os-type linux
-    --os-variant rhel8.2
-    --network network=br0,mac={{ item.macaddr }}
+    --os-variant rhel8.3
+    --network network=bridge0,mac={{ item.macaddr }}
     --boot uefi
     --pxe
     --noautoconsole"
