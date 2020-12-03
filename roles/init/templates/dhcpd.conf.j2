@@ -61,35 +61,3 @@ host {{ w.name }}.lab.local {
 }
 {% endfor %}
 
-{% for w in nodes.workers_bm %}
-host {{ w.name }}.lab.local {
-	option host-name "{{ w.name }}.{{ baseName }}.{{ baseDomain }}";
-	hardware ethernet {{ w.macaddr }};
-	fixed-address {{ w.ipaddr }};
-}
-{% endfor %}
-
-{% for l in nodes.lab %}
-host {{ l.name }}.lab.local {
-	option host-name "{{ l.name }}.{{ baseName }}.{{ baseDomain }}";
-	hardware ethernet {{ l.macaddr }};
-	fixed-address {{ l.ipaddr }};
-}
-{% endfor %}
- 
-##################### HERE WE START THE 172.16.66.0/24 SUBNET ############################
-subnet 172.16.66.0 netmask 255.255.255.0 {
-    range dynamic-bootp 172.16.66.100 172.16.66.254;
-    option domain-name     "auto.local";
-    option domain-name-servers     172.16.66.1;
-    option broadcast-address 172.16.66.255;
-}
-
-{% for a in nodes.auto %}
-host {{ a.name }}.auto.local {
-	option host-name "{{ a.name }}.{{ baseName }}.{{ baseDomain }}";
-	hardware ethernet {{ a.macaddr }};
-	fixed-address {{ a.ipaddr }};
-}
-{% endfor %}
-
