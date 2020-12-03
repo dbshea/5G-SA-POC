@@ -46,7 +46,7 @@ nodes:
       netmask: "255.255.255.0"
       gw: "{{ nodes_subnet24 | default ('192.168.126')}}.1"
       macaddr: "98:4f:ee:10:5c:bc"
-      disk: "vda"
+      disk: "sda"
       boot: "uefi"
       nic_pxe: enp1s0
     - name: "worker2"
@@ -54,7 +54,7 @@ nodes:
       netmask: "255.255.255.0"
       gw: "{{ nodes_subnet24 | default ('192.168.126')}}.1"
       macaddr: "98:4f:ee:0f:f3:98"
-      disk: "vda"
+      disk: "sda"
       boot: "uefi"
       nic_pxe: enp1s0
     - name: "worker3"
@@ -62,7 +62,7 @@ nodes:
       netmask: "255.255.255.0"
       gw: "{{ nodes_subnet24 | default ('192.168.126')}}.1"
       macaddr: "98:4f:ee:10:5c:80"
-      disk: "vda"
+      disk: "sda"
       boot: "uefi"
       nic_pxe: enp1s0
 
