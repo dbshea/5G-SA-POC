@@ -49,9 +49,9 @@
     - "{{  nodes.masters  }}"
 
 # This is dirty but allows the restart of VMs after initialization - change time to fit your network speed
-- name: Pause for 120 sec
+- name: Pause for 140 sec
   pause:
-    seconds: 120
+    seconds: 140
 
 - name: Restart VMs
   command: "virsh start {{ item.name }}"
